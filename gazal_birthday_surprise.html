@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Happy Birthday Gazal ❤️</title>
+<style>
+:root{--pink:#ff6fae;--rose:#ffb6d2;--cream:#fff4f8;--ink:#2b1022}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at top,#552044 0,#1c1028 48%,#090b1c 100%);color:#fff;font-family:Georgia,serif;overflow-x:hidden}
+.stars,.hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.star{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;opacity:.75;animation:twinkle 2.4s infinite alternate}
+@keyframes twinkle{to{opacity:.15;transform:scale(1.8)}}
+main{position:relative;z-index:1;max-width:850px;margin:auto;padding:28px 18px 70px;text-align:center}
+.kicker{letter-spacing:5px;text-transform:uppercase;color:#ffc1dc;font:12px Arial,sans-serif;margin:20px 0}
+h1{font-size:clamp(42px,10vw,78px);line-height:1;margin:12px 0;color:#ffd7e8;text-shadow:0 0 22px #ff6fae}
+.subtitle{font:16px Arial,sans-serif;color:#f9dbe9}
+.cake-wrap{margin:38px auto 20px;cursor:pointer;display:inline-block;transition:.3s}
+.cake-wrap:hover{transform:translateY(-6px) scale(1.03)}
+.cake{font-size:112px;filter:drop-shadow(0 0 20px #ff76b5);animation:bob 2.5s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-10px)}}
+button{border:0;border-radius:999px;padding:14px 25px;background:linear-gradient(100deg,#ff75b4,#ffb2cf);color:#4b1632;font-weight:bold;font-size:15px;cursor:pointer;box-shadow:0 8px 25px #ff6fae55}
+button:hover{filter:brightness(1.08);transform:translateY(-2px)}
+.panel{margin:28px auto;padding:26px 20px;max-width:680px;border:1px solid #ffb5d655;border-radius:24px;background:#ffffff0d;backdrop-filter:blur(8px);box-shadow:0 12px 45px #0003}
+h2{color:#ffc1dc;font-size:clamp(25px,6vw,36px);margin:4px 0 18px}
+.message{font-size:clamp(17px,3.8vw,21px);line-height:1.8;color:#fff0f6}
+.counts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}
+.count{padding:16px 5px;border-radius:16px;background:#ff8db51c;border:1px solid #ffb5d655}
+.num{display:block;font:bold clamp(24px,6vw,38px) Arial,sans-serif;color:#ffd1e4}
+.unit{font:11px Arial,sans-serif;letter-spacing:1px;color:#ffc1dc;text-transform:uppercase}
+.small{font:13px Arial,sans-serif;color:#f6cfe0;line-height:1.7}
+.hidden{display:none}
+footer{margin-top:38px;color:#e9b9d0;font:13px Arial,sans-serif}
+.heart{position:absolute;bottom:-30px;color:#ff9fc6;animation:float 9s linear infinite;opacity:.55}
+@keyframes float{to{transform:translateY(-110vh) rotate(30deg);opacity:0}}
+@media(max-width:480px){.counts{gap:6px}.count{padding:13px 2px}.unit{font-size:9px}.cake{font-size:90px}}
+</style>
+</head>
+<body>
+<div class="stars" id="stars"></div><div class="hearts" id="hearts"></div>
+<main>
+  <div class="kicker">A little surprise made with love</div>
+  <h1>Happy Birthday<br>Gazal! <span>💗</span></h1>
+  <p class="subtitle">A special day for someone truly special</p>
+  <div class="cake-wrap" id="cake" aria-label="Birthday cake"><div class="cake">🎂</div></div>
+  <div><button id="surprise">Tap for your surprise ✨</button></div>
+
+  <section class="panel">
+    <h2>Birthday Countdown 🎀</h2>
+    <p class="small" id="countdownNote">Counting down to Gazal's special day</p>
+    <div class="counts" id="birthdayCountdown">
+      <div class="count"><span class="num" id="days">--</span><span class="unit">Days</span></div>
+      <div class="count"><span class="num" id="hours">--</span><span class="unit">Hours</span></div>
+      <div class="count"><span class="num" id="minutes">--</span><span class="unit">Minutes</span></div>
+      <div class="count"><span class="num" id="seconds">--</span><span class="unit">Seconds</span></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Our time since your birth 💞</h2>
+    <p class="small">A little counter celebrating every moment of your life</p>
+    <div class="counts">
+      <div class="count"><span class="num" id="years">--</span><span class="unit">Years</span></div>
+      <div class="count"><span class="num" id="months">--</span><span class="unit">Months</span></div>
+      <div class="count"><span class="num" id="ageDays">--</span><span class="unit">Days</span></div>
+      <div class="count"><span class="num" id="ageHours">--</span><span class="unit">Hours</span></div>
+    </div>
+  </section>
+
+  <section class="panel hidden" id="letter">
+    <h2>For you, Gazal ❤️</h2>
+    <p class="message">Happy Birthday, Gazal! 🎂💗<br>
+    May your life always be filled with happiness, beautiful smiles and dreams that come true.
+    You deserve all the love and joy in the world. Keep shining, keep smiling, and never forget how special you are.<br>
+    With lots of love,<br><strong>Asad ❤️</strong></p>
+    <p class="small">Made just for you, with love.</p>
+  </section>
+  <footer>Made with ❤️ by Asad, especially for Gazal</footer>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+for(let i=0;i<95;i++){let s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*3+'s';$('stars').appendChild(s)}
+function heart(){let h=document.createElement('span');h.className='heart';h.textContent=['♥','♡','✦'][Math.floor(Math.random()*3)];h.style.left=Math.random()*100+'%';h.style.fontSize=(12+Math.random()*20)+'px';h.style.animationDuration=(7+Math.random()*6)+'s';$('hearts').appendChild(h);setTimeout(()=>h.remove(),14000)}
+setInterval(heart,650);
+function nextBirthday(now){let d=new Date(now.getFullYear(),10,16,0,0,0);if(now>=d)d=new Date(now.getFullYear()+1,10,16,0,0,0);return d}
+function update(){
+ const now=new Date(), target=nextBirthday(now), diff=Math.max(0,target-now);
+ $('days').textContent=Math.floor(diff/86400000);
+ $('hours').textContent=Math.floor(diff/3600000)%24;
+ $('minutes').textContent=Math.floor(diff/60000)%60;
+ $('seconds').textContent=Math.floor(diff/1000)%60;
+ $('countdownNote').textContent=target.getFullYear()===now.getFullYear()?"Counting down to 16 November 2026":"Counting down to 16 November "+target.getFullYear();
+ // Calendar age, based on midnight because birth time was not provided.
+ let y=now.getFullYear()-2010, m=now.getMonth()-10, d=now.getDate()-16;
+ if(d<0){m--;d+=new Date(now.getFullYear(),now.getMonth(),0).getDate()}
+ if(m<0){y--;m+=12}
+ let born=new Date(2010,10,16), today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+ let hours=Math.floor((now-new Date(today.getFullYear(),today.getMonth(),today.getDate()))/3600000);
+ $('years').textContent=Math.max(0,y);$('months').textContent=Math.max(0,m);$('ageDays').textContent=Math.max(0,d);$('ageHours').textContent=hours;
+}
+update();setInterval(update,1000);
+function reveal(){ $('letter').classList.remove('hidden'); $('letter').scrollIntoView({behavior:'smooth',block:'center'}); for(let i=0;i<24;i++)setTimeout(heart,i*60)}
+$('surprise').addEventListener('click',reveal);$('cake').addEventListener('click',reveal);
+</script>
+</body></html>
